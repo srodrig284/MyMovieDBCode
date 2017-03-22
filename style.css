@@ -1,0 +1,31 @@
+/* This is for the response area */
+.actor-pic{
+    width: auto;
+    height: 75px;
+}
+
+.media-actors{
+    padding:10px;
+    width: 100%;
+}
+
+.actor-wrapper{
+    border: 1px solid;
+    width: 50%;
+    background-color: cornflowerblue;
+}
+
+.actor-wrapper:hover{
+    color: #fff;
+    background-color: #00b3db;
+    border-color: #285e8e; /*set the color you want here*/
+}
+
+.modal-title{
+    text-align: center;
+}
+
+#goto-wiki{
+    float: left;
+}
+

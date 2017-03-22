@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Movie DB</title>
+    <meta name="author" content="Sandra Rodriguez">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+<!--This div is for the list of actors returned from request -->
+<div class="container">
+    <button id="testButton">Test Button</button>
+    <div id="response">
+        <!--<div class="actor-wrapper" id="target-click">
+               <!--<div class="media media-actors">
+                  <div class="media-left"></div>
+                  <div class="media-body white-color"></div>
+               </div>
+        </div>-->
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">BIOGRAPHY</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="bio"></p>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div id="dob"></div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div id="birth-place"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class=" btn btndefault" id="goto-wiki"></button>
+                    <button type="button" class=" btn btndefault" id="homepage"></button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Script -->
+<script src="wiki.js"></script>
+
+</body>
+</html>
