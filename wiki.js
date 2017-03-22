@@ -176,7 +176,7 @@ function displayModal(searchId){
 
         $(".modal-title").text(response.name + "'s Biography");
 
-        if(response.biography != "null"){
+        if(response.biography){
             json_data = JSON.stringify(response.biography);
             $(".modal-body > .bio").text(json_data);
         }
@@ -186,7 +186,7 @@ function displayModal(searchId){
         }
 
 
-        if(response.birthday != "null"){
+        if(response.birthday){
             json_data = JSON.stringify(response.birthday);
             $("#dob").text('Date of Birth: ' + json_data);
         }
@@ -196,7 +196,7 @@ function displayModal(searchId){
         }
 
 
-        if(response.place_of_birth != "null") {
+        if(response.place_of_birth) {
             json_data = JSON.stringify(response.place_of_birth);
             $("#birth-place").text('Birthplace: ' + json_data);
         }
@@ -205,7 +205,7 @@ function displayModal(searchId){
             $("#birth-place").hide();
         }
 
-        if(response.homepage != "null") {
+        if(response.homepage) {
             json_data = JSON.stringify(response.homepage);
             $("#homepage")
                 .text("Go to " + response.name + "'s homepage")
