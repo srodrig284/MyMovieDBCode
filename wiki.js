@@ -178,7 +178,9 @@ function displayModal(searchId){
 
         if(response.biography){
             json_data = JSON.stringify(response.biography);
-            $(".modal-body > .bio").text(json_data);
+            $(".modal-body > .bio")
+                .text(json_data)
+                .show();
         }
         else
         {
@@ -188,7 +190,9 @@ function displayModal(searchId){
 
         if(response.birthday){
             json_data = JSON.stringify(response.birthday);
-            $("#dob").text('Date of Birth: ' + json_data);
+            $("#dob")
+                .text('Date of Birth: ' + json_data)
+                .show();
         }
         else
         {
@@ -198,7 +202,10 @@ function displayModal(searchId){
 
         if(response.place_of_birth) {
             json_data = JSON.stringify(response.place_of_birth);
-            $("#birth-place").text('Birthplace: ' + json_data);
+            $("#birth-place")
+                .text('Birthplace: ' + json_data)
+                .show();
+
         }
         else
         {
@@ -209,6 +216,7 @@ function displayModal(searchId){
             json_data = JSON.stringify(response.homepage);
             $("#homepage")
                 .text("Go to " + response.name + "'s homepage")
+                .show()
                 .on('click', function(event){
                     event.preventDefault();
                     document.location = response.homepage;
