@@ -87,7 +87,8 @@ function getWiki(actorName){
 }
 
 // Create the list of actors
-function makeButtons() {
+function makeButtons(actorArray) {
+    /* COMMENT OUT THIS ARRAY.  IT IS ONLY FOR TESTING
     var actorArray = [
         {
             name: "Robert Di Niro",
@@ -104,7 +105,7 @@ function makeButtons() {
             id: "11483",
             profile_path: "/rXFjIQVimKotQUtXwVNGg7XVMeW.jpg"
         }
-    ];
+    ];*/
 
     var path = "";
 
@@ -154,11 +155,11 @@ function makeButtons() {
 } // END function makeButtons
 
 
-
+/*
 // this is for testing purposes only
 $("#testButton").on("click", function (e) {
     makeButtons();
-});
+});*/
 
 
 // When actor is clicked, get the actors information and display modal
