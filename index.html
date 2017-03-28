@@ -1,73 +1,308 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 
 <head>
+    <title>Grapevine</title>
+    <!--Link to Bootstrap-->
 
-    <meta charset="UTF-8">
-    <title>Movie DB</title>
-    <meta name="author" content="Sandra Rodriguez">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-    <!-- Bootstrap CDN-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link href="style.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <script type="text/javascript" src="shine.min.js"></script>
+
+   
+
+    <script src="assets/javascript/awesomplete/awesomplete.js" async></script>
+
+    <link rel="stylesheet" href="assets/javascript/awesomplete/awesomplete.css" />
+
+    <!--link to js-->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 
 
-</head>
 
-<body>
-<!--This div is for the list of actors returned from request -->
-<div class="container">
-    <button id="testButton">Test Button</button>
-    <div id="response">
-        <!--<div class="actor-wrapper" id="target-click">
-               <!--<div class="media media-actors">
-                  <div class="media-left"></div>
-                  <div class="media-body white-color"></div>
-               </div>
-        </div>-->
-    </div>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">BIOGRAPHY</h4>
+    <head>
+        <meta charset="utf-8">
+        <title>Favorite Movies</title>
+        <style type="text/css">
+            /*button,
+            div,
+            form,
+            input {
+                margin: 10px;
+            }*/
+
+            .container {
+                text-align: center;
+            }
+
+            #response {
+                text-align: center;
+            }
+
+            #submitButton {
+                margin: 10px;
+            }
+
+            #movie-2-input {
+                margin: 10px;
+            }
+            #movie-1-input {
+                
+                margin: 10px;
+            }
+
+            .dropdown {
+
+                position: relative;
+            }
+
+            .actor-pic {
+                width: auto;
+                height: 75px;
+            }
+
+            .media-actors {
+                padding: 10px;
+                width: 100%;
+            }
+
+            .actor-wrapper {
+                border: 1px solid;
+                width: 100%;
+                background-color: cornflowerblue;
+            }
+
+            .actor-wrapper:hover {
+                color: #fff;
+                background-color: #00b3db;
+                border-color: #285e8e;
+                /*set the color you want here*/
+            }
+
+            .modal-title {
+                text-align: center;
+            }
+
+            .modal-link-btn {
+                background-color: #b8afd5;
+            }
+            .modal-link-btn:hover{
+                background-color: #8907ED;
+                color: #fff;
+            }
+
+            .modal-title {
+                text-align: center;
+            }
+
+            .modal-body, .modal-hd-bg{
+                background-color: #d9e0e8;
+            }
+            #goto-wiki, #homepage {
+                float: left;
+            }
+
+            .bio-pic{
+                width:auto;
+                height: 150px;
+            }
+
+            body {
+                padding: 0;
+
+                background-color: black;
+
+
+            }
+
+            #main,
+            .continer-fluid {
+                padding: 0 !important;
+                background-color: black;
+                
+            }
+
+            .carousel-content {
+                position: absolute;
+                bottom: 20%;
+                left: 25%;
+                z-index: 20;
+                color: white;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+                text-align: center;
+            }
+
+
+            .shadow-text {
+                margin: auto;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+
+                color: #ded9f7;
+                text-align: center;
+
+                font-size: 10em;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 800;
+
+                letter-spacing: -0.02em;
+                line-height: 1.2em;
+            }
+
+            .carousel-inner {
+
+                height: 300px;
+                width: 100%;
+            }
+
+            h1 {
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+
+       <div class="container-fluid" id="main">
+	
+	       <div id="carousel" class="carousel slide" data-ride="carousel">
+
+    	       <div class="carousel-inner">
+
+        
+        	<div class="item active">
+            	<img src="close.jpg" alt="Slide 1" />
+        	</div>
+
+        	<div class="carousel-content">
+            	<h1 id="shine" class="shadow-text">GrapeVine</h1>
+            </div>
+
+        	<div class="item">
+            	<img src="jurassic-world.jpg" alt="Slide 2" />
+        	</div>
+
+        	<div class="item">
+            	<img src="la-la-land.jpg" alt="Slide 3" />
+        	</div>
+
+        	<div class="item">
+            	<img src="starwars.jpg" alt="Slide 4" />
+        	</div>
+
+        	<div class="item">
+            	<img src="african-queen.png" alt="Slide 4" />
+        	</div>
+
+        	<div class="item">
+            	<img src="matrix.jpg" alt="Slide 4" />
+        	</div>
+        	<div class="item">
+            	<img src="hobbit.jpg" alt="Slide 4" />
+        	</div>
+
+
+    	   </div> 
+	   </div>
+            <div class="container">
+
+            <br>
+            <br>
+    <div class = "col-lg-3"></div>
+    <div class = "col-lg-6">
+    <div class = "panel" style = "background-color: #1b1b1c; padding-top: 10px; color: #494b4f;">
+    <h5>Type in two televison shows and/or films to find matching actors...</h5>
+				     <div class="form-group">
+    
+    <input type="email" class="form-control" id="movie-1-input" placeholder="First Selection..." style = "width:500px">
+  </div>
+
+    <div class="form-group">
+     <input type="email" class="form-control" id="movie-2-input" placeholder="Second Selection..." style = "width:500px">
+  </div>
+
+      				  <button type="button" class="btn btn-success" id="submitButton" style="width: 100px">Go!</button>
+</div>
+            </div>
+            </div>
+                <!--  <button id="testButton">Test Button</button> -->
+                
+                <div class = "row" >
+                <div class = "col-lg-4"></div>
+                <div class="col-lg-4" id="response" >
+                </div>    
+
                 </div>
-                <div class="modal-body">
-                    <p class="bio"></p>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <div id="dob"></div>
+
+                <br>
+                <br>
+                <br>
+
+
+            
+                <!-- Modal -->
+                <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header modal-hd-bg">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">BIOGRAPHY</h4>
                         </div>
-                        <div class="col-xs-6">
-                            <div id="birth-place"></div>
+                        <div class="modal-body">
+                            <!--<p class="bio"></p>-->
+                            <div class="media">
+                                <div class="media-body white-color">
+                                    <div class="media-left bio-pic-area" style="float:left">
+                                        <!--<img src="assets/images/profilepic.jpg" class="media-object bio-pic" style="width:153px">-->
+                                    </div>
+                                    <p class="bio"></p>
+                                </div>
+                            </div> <!--END .media-->
+
+
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div id="dob" style="margin:5px 0 5px 0"></div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div id="birth-place" style="margin:5px 0 5px 0"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a type="button" class=" btn btn-default modal-link-btn" id="goto-wiki" target="_blank"></a>
+                            <a type="button" class=" btn btn-default modal-link-btn" id="homepage" target="_blank"></a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class=" btn btndefault" id="goto-wiki"></button>
-                    <button type="button" class=" btn btndefault" id="homepage"></button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
                 </div>
             </div>
 
+
         </div>
-    </div>
-</div>
+
+   
+    
 
 
+    <div class="footer" style="text-align: center;position:fixed;background-color: #1b1b1c;width: 100%;margin: auto;padding:10px;color:white;bottom: 0px;border-top:7px solid#1b1b1c;z-index: 1;">&copy; Copyright 2017 Grapevine Project</div>
+            
+        
+    </body>
 
-<!-- Script -->
-<script src="wiki.js"></script>
-
-</body>
 </html>
